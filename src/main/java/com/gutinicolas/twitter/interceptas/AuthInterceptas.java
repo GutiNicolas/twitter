@@ -25,7 +25,7 @@ public class AuthInterceptas implements HandlerInterceptor {
         if ( request.getHeader(TEST_HEADER) != null ) { return true; }
         String authorization = request.getHeader(AUTH_HEADER);
         if (StringUtils.isBlank(authorization)) {
-            throw new TwitterException(HttpStatus.UNAUTHORIZED.value(), "Login needed");
+            throw new TwitterException(HttpStatus.UNAUTHORIZED.value(), "No Auth provided and Login is needed");
         }
         this.authService.performAuth(authorization);
 

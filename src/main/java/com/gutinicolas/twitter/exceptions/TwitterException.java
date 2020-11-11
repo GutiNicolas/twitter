@@ -5,31 +5,21 @@ public class TwitterException extends RuntimeException {
 
         private int code;
 
-        public TwitterException() {
-        }
-
-        public TwitterException(String message) {
-            super(message);
-        }
-
-        public TwitterException(String message, Throwable cause) {
-            super(message, cause);
-        }
-
         public TwitterException(int code, String message) {
             super(message);
             this.code = code;
         }
+
         public TwitterException(int code, String message, Throwable cause) {
             super(message, cause);
             this.code = code;
         }
 
-        public TwitterException(Throwable cause) {
-            super(cause);
-        }
+    public TwitterException() {
 
-        public int getCode() {
+    }
+
+    public int getCode() {
             return code;
         }
 

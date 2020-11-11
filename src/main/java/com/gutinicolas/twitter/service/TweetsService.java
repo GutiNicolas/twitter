@@ -10,9 +10,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
@@ -75,5 +75,21 @@ public class TweetsService {
 
         tweetsRepository.updateTweet(entity);
         return Map.of("ok", true, "message", message);
+    }
+
+    public List<TweetEntity> findByUserId(String userId) {
+        if (StringUtils.isBlank(userId)) {
+            throw new TwitterException(HttpStatus.BAD_REQUEST.value(), "Username cannot be empty.");
+        }
+
+        if (!usersService.userExists(userId)) {
+            throw new TwitterException(HttpStatus.BAD_REQUEST.value(), "User not found on Twitter");
+        }
+
+        return tweetsRepository.findByUserId(userId);
+    }
+
+    public TweetEntity findTweet(String id) {
+        return tweetsRepository.find(id).orElseThrow(() -> new TwitterException(HttpStatus.BAD_REQUEST.value(), "Tweet not found"));
     }
 }
