@@ -66,11 +66,11 @@ public class TweetsService {
         if (Boolean.TRUE.equals(like)) {
             // Es like
             entity.setLikes(entity.getLikes()+1);
-            message = "Tweet successfully like";
+            message = "Tweet successfully liked";
         } else {
             // Es dislike
             entity.setDislikes(entity.getDislikes()+1);
-            message = "Tweet successfully dislike";
+            message = "Tweet successfully disliked";
         }
 
         tweetsRepository.updateTweet(entity);
