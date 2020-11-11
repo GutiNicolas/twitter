@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "764805d7-21ae-45b1-9a62-f4e70ecb03ea",
+		"name": "Twitter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Intent Tweet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "TestHeader",
+						"value": "a",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDUxMjc4NjAsInVzZXIiOiJHdXRpTmljb2xhczEifQ.N2DstNeocACbBmGaI9Z4a5gBEHtwr2jpkZhZzbJjKu0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"GutiNicolas1\",\n    \"device\": \"iPhone\",\n    \"tweet\": {\n        \"content\": \"My random tweet\",\n        \"location\": \"Montevideo, Uruguay\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/tweets/intent",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tweets",
+						"intent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add emotion",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "TestHeader",
+						"value": "aa",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":  \"GutiNicolas1\",\n    \"tweetId\": \"e7573ef9-8020-477f-901a-763fb4989637\",\n    \"like\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/tweets/emotions/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tweets",
+						"emotions",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"GutiNicolas1\",\n    \"password\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"desiredUsername\": \"GutiNicolas1\",\n    \"password\": \"123\",\n    \"confirmPassword\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tweets by Username",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "TestHeader",
+						"value": "aa",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/tweets/GutiNicolas1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tweets",
+						"GutiNicolas1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tweet by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "TestHeader",
+						"value": "aa",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDUxMjc4NjAsInVzZXIiOiJHdXRpTmljb2xhczEifQ.N2DstNeocACbBmGaI9Z4a5gBEHtwr2jpkZhZzbJjKu0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/tweets/tweet/e7573ef9-8020-477f-901a-763fb4989637",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tweets",
+						"tweet",
+						"e7573ef9-8020-477f-901a-763fb4989637"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
