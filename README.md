@@ -18,3 +18,11 @@ Puedes importar [esta coleccion](https://github.com/GutiNicolas/twitter/blob/mai
 Todo endpoint de la aplicacion {twitterUrl}/tweets/* esta protegido contra usuarios no autorizados, para poder ser usados es necesario incuir el header Authorization: Bearer {token}   o por motivos de test, incluir el header TestHeader en el request
 
 Para obtener un token es necesario hacer uso del servicio de login {twitterUrl}/ussers/login
+
+
+### Arquitectura
+Twitter usa Java con Spring Boot para su core, ademas de varias librerias como JWT de Auth0 o Commons lang de Apache para su logica
+
+Como DB utiliza MongoDB integrada con reactive mongo de Srping Boot
+
+Como facilitador de validacion de usuarios utiliza JWT 
