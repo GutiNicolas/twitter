@@ -23,7 +23,7 @@ Para obtener un token es necesario hacer uso del servicio de login {twitterUrl}/
 ### Arquitectura
 Twitter usa Java con Spring Boot para su core, ademas de varias librerias como JWT de Auth0 o Commons lang de Apache para su logica
 
-Como DB utiliza MongoDB integrada con reactive mongo de Srping Boot
+Como DB utiliza MongoDB integrada con reactive mongo de Spring Boot
 
 Como facilitador de validacion de usuarios utiliza JWT 
 
