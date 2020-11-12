@@ -28,3 +28,6 @@ Como DB utiliza MongoDB integrada con reactive mongo de Spring Boot
 Como facilitador de validacion de usuarios utiliza JWT 
 
 
+![Arquitectura](https://i.ibb.co/4jHSQMd/Untitled-Diagram-4.png)
+
+
