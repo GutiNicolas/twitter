@@ -1,4 +1,4 @@
-# twitter
+# twitter (proyecto para la FING)
 
 
 ### Como correr twitter
